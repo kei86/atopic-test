@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { UserContext } from "../../../providers/UserProvider";
+import { useRecoilValue } from "recoil";
+import { userState } from "../../../store/userState";
 export const UserIconWithName = (props) => {
   const { image, name } = props;
-  const { userInfo } = useContext(UserContext);
+  //const { userInfo } = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <Scontainer>
@@ -30,6 +33,6 @@ const SName = styled.p`
 
 const SEdit = styled.span`
   text-decoration: underline;
-  colr: #aaa;
+  color: #aaa;
   cursor: pointer;
 `;

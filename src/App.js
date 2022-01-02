@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
 import { SecondaryButton } from "./components/atoms/button/SecondaryButton";
 import { SearchInput } from "./components/molecules/SearchInput";
@@ -12,8 +13,10 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <UserProvider>
-      <Router />
-    </UserProvider>
+    <RecoilRoot>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </RecoilRoot>
   );
 }
