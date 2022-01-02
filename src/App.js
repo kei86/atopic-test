@@ -5,10 +5,15 @@ import { SearchInput } from "./components/molecules/SearchInput";
 import { UserCard } from "./components/organisms/user/UserCard";
 import { DefaultLayout } from "./components/templates/DefaultLayout";
 import { HeaderOnly } from "./components/templates/HeaderOnly";
+import { UserProvider } from "./providers/UserProvider";
 import { Router } from "./router/Router";
 
 import "./styles.css";
 
 export default function App() {
-  return <Router />;
+  return (
+    <UserProvider>
+      <Router />
+    </UserProvider>
+  );
 }

@@ -28,7 +28,7 @@ export const Users = () => {
       <SearchInput />
       <SUserArea>
         {users.map((user) => (
-          <UserCard key={user.id} isAdmin={isAdmin} user={user} />
+          <UserCard key={user.id} user={user} />
         ))}
       </SUserArea>
     </SContainer>
